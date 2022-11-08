@@ -1,5 +1,5 @@
 class GeneralShoppingListsController < ApplicationController
-  before_action :set_general_shopping_list, only: %i[ show edit update destroy ]
+  before_action :set_general_shopping_list, only: %i[show edit update destroy]
 
   # GET /general_shopping_lists or /general_shopping_lists.json
   def index
@@ -7,8 +7,7 @@ class GeneralShoppingListsController < ApplicationController
   end
 
   # GET /general_shopping_lists/1 or /general_shopping_lists/1.json
-  def show
-  end
+  def show; end
 
   # GET /general_shopping_lists/new
   def new
@@ -16,8 +15,7 @@ class GeneralShoppingListsController < ApplicationController
   end
 
   # GET /general_shopping_lists/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /general_shopping_lists or /general_shopping_lists.json
   def create
@@ -25,7 +23,7 @@ class GeneralShoppingListsController < ApplicationController
 
     respond_to do |format|
       if @general_shopping_list.save
-        format.html { redirect_to general_shopping_list_url(@general_shopping_list), notice: "General shopping list was successfully created." }
+        format.html { redirect_to general_shopping_list_url(@general_shopping_list), notice: 'General shopping list was successfully created.' }
         format.json { render :show, status: :created, location: @general_shopping_list }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -38,7 +36,7 @@ class GeneralShoppingListsController < ApplicationController
   def update
     respond_to do |format|
       if @general_shopping_list.update(general_shopping_list_params)
-        format.html { redirect_to general_shopping_list_url(@general_shopping_list), notice: "General shopping list was successfully updated." }
+        format.html { redirect_to general_shopping_list_url(@general_shopping_list), notice: 'General shopping list was successfully updated.' }
         format.json { render :show, status: :ok, location: @general_shopping_list }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -52,19 +50,20 @@ class GeneralShoppingListsController < ApplicationController
     @general_shopping_list.destroy
 
     respond_to do |format|
-      format.html { redirect_to general_shopping_lists_url, notice: "General shopping list was successfully destroyed." }
+      format.html { redirect_to general_shopping_lists_url, notice: 'General shopping list was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_general_shopping_list
-      @general_shopping_list = GeneralShoppingList.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def general_shopping_list_params
-      params.fetch(:general_shopping_list, {})
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_general_shopping_list
+    @general_shopping_list = GeneralShoppingList.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def general_shopping_list_params
+    params.fetch(:general_shopping_list, {})
+  end
 end

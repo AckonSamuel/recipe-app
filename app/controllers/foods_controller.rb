@@ -9,7 +9,7 @@ class FoodsController < ApplicationController
     @food = Food.new
   end
 
-    # POST /foods or /foods.json
+  # POST /foods or /foods.json
   def create
     @food = Food.new(food_params)
     @food.user = current_user

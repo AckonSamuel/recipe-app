@@ -1,14 +1,16 @@
-<p style="color: green"><%= notice %></p>
-
-<h1>General shopping lists</h1>
-
-<div id="general_shopping_lists">
-  <% @general_shopping_lists.each do |general_shopping_list| %>
-    <%= render general_shopping_list %>
-    <p>
-      <%= link_to "Show this general shopping list", general_shopping_list %>
-    </p>
-  <% end %>
+<div class="total-list">
+ <span>
+    Total amount to by all items is $<%= @total_amount %>
+  </span>
+  <span>
+    Total items are <%= @total_items %>
+  </span>
 </div>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Quantity</th>
+    <th>Price</th>
+  </tr>
 
-<%= link_to "New general shopping list", new_general_shopping_list_path %>
+</table>

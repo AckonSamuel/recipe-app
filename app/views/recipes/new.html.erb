@@ -1,9 +1,23 @@
 <h1>New recipe</h1>
 
-<%= render "form", recipe: @recipe %>
-
+<%= form_with model: @recipe, url: recipes_path, method: :post, local: true, scope: :recipe, class: "form" do |form| %>
+  <div class='comment-form' >
+    <%= form.label :name %>
+    <%= form.text_field :name, class: "form-text" %>
+    <%= form.label :description %>
+    <%= form.text_area :description, class: "form-text" %>
+    <%= form.label :preparation_time %>
+    <%= form.text_field :preparation_time, class: "form-text" %>
+    <%= form.label :cooking_time %>
+    <%= form.text_field :cooking_time, class: "form-text" %>
+    <%= form.radio_button :public, "Yes" %>
+    <%= form.label :public, "Public recipe" %>
+    <%= form.radio_button :public, "No" %>
+    <%= form.label :public, "Not public recipe" %>
+  </div>
+  <%= form.submit %>
+<% end %>
 <br>
-
 <div>
   <%= link_to "Back to recipes", recipes_path %>
 </div>

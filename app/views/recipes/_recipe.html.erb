@@ -1,2 +1,7 @@
-<div id="<%= dom_id recipe %>">
+<div class='rectangle' id="<%= dom_id recipe %>">
+<h2> <%= link_to recipe.name, recipe %></h2>
+<div class="btn-destroy"><%= button_to "Destroy this recipe", @recipe, method: :delete %></div>
+<p class='shownot'><%= recipe.preparation_time %></p>
+<p class='shownot'><%= recipe.cooking_time %></p>
+<p class='info-desc'><%= recipe.description %></p>
 </div>

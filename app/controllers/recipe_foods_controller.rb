@@ -9,5 +9,18 @@ class RecipeFoodsController < ApplicationController
         @foods = current_user.foods 
     end
 
-    
+    def create
+        @recipe = Recipe.find(params[:recipe_id])
+        @recipe_food = RecipeFood.new(recipe_food_params)
+        @recipe_food.recipe = @recipe
+        @recipe_food.save ? do 
+            flash[:notice] = 'Food added to recipe'
+            redirect_to recipe_path(@recipe)
+        end
+        : do
+            flash[:alert] = 'Food not added to recipe'
+            render :new
+        end
+    end
+
 end

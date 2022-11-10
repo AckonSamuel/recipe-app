@@ -51,6 +51,7 @@ class RecipesController < ApplicationController
       else
         format.html { render :new, status: :unprocessable_entity, notice: 'Recipe not deleted' }
         format.json { render json: @recipe.errors, status: :unprocessable_entity }
+      end
     end
   end
 

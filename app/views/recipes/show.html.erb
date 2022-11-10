@@ -4,7 +4,28 @@
 </div>
 
 <table class='table'>
- <% render foodrecipe %>
+ <% if @recipe.recipe_foods.any? %>
+    <thead>
+        <tr>
+        <th>Food</th>
+        <th>Quantity</th>
+        <th>Value</th>
+        <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+    <% @recipe.recipe_foods.each do |food|%>
+    <tr>
+      <td><%= food.food.name%></th>
+      <td><%= food.quantity%></td>
+      <td><%= food.quantity * food.food.price %></td>
+      <td>
+        <%=link_to "Delete", recipe_recipe_food_path(@recipe, food), method: :delete%>
+      </td>
+    </tr>
+    <%end%>
+    </tbody>
+  <%end%>
 </table>
 
   <%= link_to "Edit this recipe", edit_recipe_path(@recipe) %> |

@@ -8,10 +8,10 @@
     <p class='info-desc'><%= recipe.description %></p>
     <div class='shownot'>
         <div class='btn-shoplist'>
-            <%= button_to "Generate shopping list", general_shopping_list_path %>
+            <%= link_to "Generate shopping list", general_shopping_list_path %>
         </div>
         <div class='btn-addingred'>
-            <%= button_to "Add ingredient", new_recipe_recipe_food_path %>
+            <%= link_to "Add ingredient", new_recipe_recipe_food_path(@recipe) %>
         </div>
     </div>
 </div>

@@ -3,6 +3,15 @@
   <%= render @recipe %>
 </div>
 
+ <div>
+        <div class='btn-shoplist'>
+            <%= link_to "Generate shopping list", general_shopping_list_path %>
+        </div>
+        <div class='btn-addingred'>
+            <%= link_to "Add ingredient", new_recipe_recipe_food_path(@recipe) %>
+        </div>
+    </div>
+
 <table class='table'>
  <% if @recipe.recipe_foods.any? %>
     <thead>

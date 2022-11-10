@@ -1,15 +1,22 @@
-<table>
-<tr>
-    <th>Food</th>
-    <th>Quantity</th>
-    <th>Value</th>
-    <th>Actions</th>
-  </tr>
-<tr>
-<td><%= foodrecipe.food.name %></td>
-<td><%= foodrecipe.food.quantity %></td>
-<td><%= foodrecipe.food.price %></td>
-<td><%= foodrecipe.food.name %></td>
-</tr>
-
-</table>
+<% if @recipe.recipe_foods.any? %>
+    <thead>
+        <tr>
+        <th>Food</th>
+        <th>Quantity</th>
+        <th>Value</th>
+        <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+    <% @recipe.recipe_foods.each do |food|%>
+    <tr>
+      <td><%= food.food.name%></th>
+      <td><%= food.quantity%></td>
+      <td><%= food.quantity * food.food.price %></td>
+      <td>
+        <%=link_to "Delete", recipe_recipe_food_path(@recipe, food), method: :delete%>
+      </td>
+    </tr>
+    <%end%>
+    </tbody>
+  <%end%>

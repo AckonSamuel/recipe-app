@@ -1,7 +1,17 @@
 <div class='rectangle' id="<%= dom_id recipe %>">
-<h2> <%= link_to recipe.name, recipe %></h2>
-<div class="btn-destroy"><%= button_to "Destroy this recipe", recipe_path(id: recipe.id), method: :delete %></div>
-<p class='shownot'><%= recipe.preparation_time %></p>
-<p class='shownot'><%= recipe.cooking_time %></p>
-<p class='info-desc'><%= recipe.description %></p>
+    <h2> <%= link_to recipe.name, recipe %></h2>
+    <div class="btn-destroy">
+        <%= button_to "Destroy this recipe", recipe_path(id: recipe.id), method: :delete %>
+    </div>
+    <p class='shownot'><%= recipe.preparation_time %></p>
+    <p class='shownot'><%= recipe.cooking_time %></p>
+    <p class='info-desc'><%= recipe.description %></p>
+    <div class='shownot'>
+        <div class='btn-shoplist'>
+            <%= button_to "Generate shopping list", general_shopping_list_path %>
+        </div>
+        <div class='btn-addingred'>
+            <%= button_to "Add ingredient", new_recipe_recipe_food_path %>
+        </div>
+    </div>
 </div>

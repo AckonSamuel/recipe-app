@@ -46,8 +46,8 @@ class RecipesController < ApplicationController
   def destroy
     respond_to do |format|
       if @recipe.destroy
-      format.html { redirect_to recipes_url, notice: 'Recipe was successfully deleted.' }
-      format.json { head :no_content }
+        format.html { redirect_to recipes_url, notice: 'Recipe was successfully deleted.' }
+        format.json { head :no_content }
       else
         format.html { render :new, status: :unprocessable_entity, notice: 'Recipe not deleted' }
         format.json { render json: @recipe.errors, status: :unprocessable_entity }

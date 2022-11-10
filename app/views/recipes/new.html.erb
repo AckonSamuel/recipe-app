@@ -10,9 +10,9 @@
     <%= form.text_field :preparation_time, class: "form-text" %>
     <%= form.label :cooking_time %>
     <%= form.text_field :cooking_time, class: "form-text" %>
-    <%= form.radio_button :public, "Yes" %>
+    <%= form.radio_button :public,  true %>
     <%= form.label :public, "Public recipe" %>
-    <%= form.radio_button :public, "No" %>
+    <%= form.radio_button :public, false %>
     <%= form.label :public, "Not public recipe" %>
   </div>
   <%= form.submit %>

@@ -21,4 +21,21 @@ class RecipeFoodsController < ApplicationController
       render :new
     end
   end
+
+  def destroy
+    @recipe_food = RecipeFood.find(params[:id])
+    @recipe = @recipe_food.recipe
+    if @recipe_food.destroy
+      flash[:notice] = 'Food removed from recipe.'
+    else
+      flash[:alert] = 'Food not removed from recipe.'
+    end
+    redirect_to recipe_path(@recipe)
+  end
+
+  private
+
+  def recipe_food_params
+    params.require(:recipe_food).permit(:food_id, :quantity)
+  end
 end

@@ -1,9 +1,29 @@
-<p style="color: green"><%= notice %></p>
-<div class='show-recipe'>
-  <%= render @recipe %>
-</div>
+<h2 class="recipe-header"><%= @recipe.name %></h2>
+<div class="details">
+    <div class="form-check">
+      <% if @recipe.public == false %>
+        <%= check_box :public, checked: false  %>
+        <label class="check-label" for="unchecked">Public</label>
+      <% else %>
+        <%= check_box :public, checked: true %>
+        <label class="check-label" for="checked">Public</label>
+      <%end%>
+    </div>
 
- <div>
+  <div class="time">
+    <p>Preparation time: </p>
+    <span><%=@recipe.preparation_time %></span>
+  </div>
+  <div class="time">
+    <p>Cooking time: </p>
+    <span><%=@recipe.cooking_time %></span>
+  </div>
+
+  <div class='res'>
+    <p><%= @recipe.description %></p>
+  </div>
+
+ <div class="links">
         <div class='btn-shoplist'>
             <%= link_to "Generate shopping list", general_shopping_list_path %>
         </div>
@@ -37,7 +57,8 @@
   <%end%>
 </table>
 
-  <%= link_to "Edit this recipe", edit_recipe_path(@recipe) %> |
+  <div class="links">
+  <%= link_to "Edit this recipe", edit_recipe_path(@recipe) %>
   <%= link_to "Back to recipes", recipes_path %>
-
+  </div>
 </div>

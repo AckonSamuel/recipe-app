@@ -43,6 +43,7 @@ class FoodsController < ApplicationController
   # DELETE /foods/1 or /foods/1.json
   def destroy
     @food = Food.all.find(params[:id])
+    @food.recipe_foods.destroy_all
     if @food.destroy
       flash[:notice] = 'Food was deleted successfully.'
     else

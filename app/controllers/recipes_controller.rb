@@ -45,6 +45,7 @@ class RecipesController < ApplicationController
   # DELETE /recipes/1 or /recipes/1.json
   def destroy
     respond_to do |format|
+      @recipe.recipe_foods.destroy_all
       if @recipe.destroy
         format.html { redirect_to recipes_url, notice: 'Recipe was successfully deleted.' }
         format.json { head :no_content }

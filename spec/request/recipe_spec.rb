@@ -5,7 +5,7 @@ RSpec.describe 'Recipes', type: :request do
     before(:each) do
       # user = User.create name: 'Tom', email: 'tom@example.com', password: 'password'
       # post user_session_path, params: { user: { email: user.email, password: user.password } }
-      user = User.create(name: 'Tom')
+      User.create(name: 'Tom')
       get recipes_path
     end
 

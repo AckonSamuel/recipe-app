@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe 'Foods', type: :request do
   describe 'GET foods#index' do
     before(:each) do
-      user = User.create(name: 'Tom')
+      User.create(name: 'Tom')
       # post user_session_path, params: { user: { email: user.email, password: user.password } }
       get foods_path
     end

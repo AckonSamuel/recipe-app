@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
-  # devise_for :users
-  resources :users
-  resources :foods
-  resources :recipes do
+  devise_for :users, sign_out_via: [:get]
+    resources :users
+    resources :foods
+    resources :recipes do
     resources :recipe_foods, only: %i[new create destroy]
   end
   root 'foods#index'

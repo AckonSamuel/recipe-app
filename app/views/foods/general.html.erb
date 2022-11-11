@@ -1,0 +1,33 @@
+<div class="general-list-container">
+    <h3>Shopping List</h3>
+    <div class='items-amount'>
+      <div>
+      <span>Amount of food items to buy: </span>
+      <span>&nbsp;<%= @foods.length %></span>
+      </div>
+
+      <div class='rest'>
+      <span>Total value of food needed:</span>
+      <span>&nbsp;<%= @total %></span>
+      </div>
+    </div>
+
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Food</th>
+          <th>Quantity</th>
+          <th>Value</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @foods.each do |food| %>
+          <tr>
+            <td><%= food.name %></td>
+             <td><%= food.quantity %> grams</td>
+            <td>$<%= food.price %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>

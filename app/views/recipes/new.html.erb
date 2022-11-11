@@ -1,0 +1,35 @@
+<h1 class="recipe-header">New recipe</h1>
+
+<%= form_with model: @recipe, url: recipes_path, method: :post, local: true, scope: :recipe, class: "form" do |form| %>
+  <div class='form-text-wrapper' >
+    <div class="form-texts">
+     <%= form.label :name %>
+     <%= form.text_field :name %>
+    </div>
+    <div class="form-texts">
+     <%= form.label :description %>
+     <%= form.text_area :description %>
+    </div>
+    <div class="form-texts">
+      <%= form.label :preparation_time %>
+      <%= form.text_field :preparation_time %>
+    </div>
+    <div class="form-texts">
+      <%= form.label :cooking_time %>
+      <%= form.text_field :cooking_time %>
+    </div>
+    <div>
+      <%= form.radio_button :public,  true %>
+      <%= form.label :public, "Public recipe" %>
+    </div>
+    <div>
+      <%= form.radio_button :public, false %>
+      <%= form.label :public, "Not public recipe" %>
+    </div>
+  </div>
+  <%= form.submit %>
+<% end %>
+<br>
+<div class="new-recipe">
+  <%= link_to "Back to recipes", recipes_path %>
+</div>

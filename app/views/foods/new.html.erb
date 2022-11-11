@@ -1,0 +1,31 @@
+<div class="form-wrapper">
+<h1>New food</h1>
+
+<%= form_with model: @food do |form| %>
+  <div>
+    <%= form.label :name %><br>
+    <%= form.text_field :name %>
+  </div>
+  <div>
+    <%= form.label :measurement_unit %><br>
+    <%= form.text_field :measurement_unit %>
+  </div>
+<div>
+    <%= form.label :quantity %><br>
+    <%= form.number_field :quantity %>
+  </div>
+  <div>
+    <%= form.label :price %><br>
+    <%= form.number_field :price %>
+  </div>
+  <div class="submit">
+    <%= form.submit  %>
+  </div>
+<% end %>
+
+<br>
+
+<div>
+  <%= link_to "Back to foods", foods_path %>
+</div>
+</div>

@@ -14,7 +14,12 @@
     <td><%= food.name %></td>
     <td><%= food.measurement_unit %></td>
     <td><%= food.price %></td>
-    <td><%= button_to "REMOVE", food_path(id: food.id), method: :delete %></td>
+    <% if can? :delete, food %>
+  <td><%= button_to "REMOVE", food_path(id: food.id), method: :delete %></td>
+<% end %>
+<% if cannot? :delete, food %>
+  <td>No actions available</td>
+<% end %>
   </tr>
     <% end %>
 </table>

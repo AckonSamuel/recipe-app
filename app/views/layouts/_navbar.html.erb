@@ -1,16 +1,16 @@
 <nav class="navbar">
-  <div class='nav-link'>
+  <div class='nav-buttons'>
     <%= form_with url: root_path, method: :get do %>
       <button class='logo'>Recipe Food List</button>
     <% end %>
       <%= form_with url: foods_path, method: :get do %>
-        <button class='list'>Foods</button>|
+        <button class='list'>Foods</button>
       <% end %>
       <%= form_with url: recipes_path, method: :get do %>
-        <button class='list'>Recipes</button> |
+        <button class='list'>Recipes</button>
       <% end %>
       <%= form_with url: public_recipes_path, method: :get do %>
-        <button class='list'>Public Recipes</button>|
+        <button class='list'>Public Recipes</button>
       <% end %>
       <%= form_with url:general_shopping_list_path, method: :get do %>
         <button class='list'>General Shopping List</button>

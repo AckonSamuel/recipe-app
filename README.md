@@ -87,8 +87,8 @@ For you to see the styling being applied in the browser during development
 👤 **Oyebade Prisicilla**
 
 * GitHub: [@OyePriscilla](https://github.com/OyePriscilla)
-* Twitter: [@Prisicilla](https://twitter.com/Prisicilla)
-* LinkedIn: [Priscilla](https://linkedin.com/in/oyepriscilla)
+* Twitter: [@Prisicilla](https://twitter.com/OyebadePriscil1)
+* LinkedIn: [Priscilla](https://www.linkedin.com/in/priscilla-oyebade-aa35b8238/)
 
 
 ## 🤝 Contributing

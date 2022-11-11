@@ -29,6 +29,10 @@
   display: block;
 }
 
+.rectangle {
+  padding: 10px;
+}
+
 #recipes .rectangle {
   display: grid;
   grid-template-columns: 1fr 3fr;
@@ -37,10 +41,6 @@
   height: 100px;
   margin: auto;
   border: 2px solid black;
-}
-
-.rectangle {
-  padding: 10px;
 }
 
 #recipes .rectangle h2 {
@@ -193,7 +193,6 @@ textarea {
 
 .pub {
   border: 1px solid #ccc;
-  margin-bottom: 1rem;
   display: flex;
   align-items: center;
   justify-content: space-between;

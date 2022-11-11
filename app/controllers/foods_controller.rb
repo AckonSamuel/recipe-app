@@ -1,4 +1,5 @@
 class FoodsController < ApplicationController
+  load_and_authorize_resource
   # GET /foods
   def index
     @foods = Food.all

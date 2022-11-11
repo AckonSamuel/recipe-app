@@ -48,9 +48,11 @@
       <td><%= food.food.name%></th>
       <td><%= food.quantity%></td>
       <td><%= food.quantity * food.food.price %></td>
-      <td>
+      <% if can? :delete, @recipe %>
+ <td>
         <%=link_to "Delete", recipe_recipe_food_path(@recipe, food), method: :delete%>
       </td>
+    <% end %>
     </tr>
     <%end%>
     </tbody>

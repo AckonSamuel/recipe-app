@@ -1,4 +1,5 @@
 class PublicRecipesController < ApplicationController
+  load_and_authorize_resource
   before_action :set_public_recipe, only: %i[show edit update destroy]
 
   # GET /public_recipes or /public_recipes.json

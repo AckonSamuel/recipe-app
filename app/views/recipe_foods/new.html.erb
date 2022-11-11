@@ -1,5 +1,4 @@
 <h2>Add Recipe Food</h2>
-<% current_user = User.first %>
 <%= form_with url: recipe_recipe_foods_path, scope: :recipe_food do |f| %>
     <div class='new-label'>
     <%= f.label :food %><br>

@@ -2,8 +2,8 @@ require 'rails_helper'
 
 RSpec.describe Food, type: :model do
   subject do
-    # @user = User.create(name: 'Oyin', email: 'oyin@mail.com', password: 'password')
-    @user = User.create(name: 'Oyin')
+    @user = User.create(name: 'Oyin', email: 'oyin@mail.com', password: 'password')
+    # @user = User.create(name: 'Oyin')
     Food.create(name: 'pizza', measurement_unit: 'grams', price: 2, quantity: 1, user: @user)
   end
 

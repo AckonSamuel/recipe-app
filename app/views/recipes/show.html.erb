@@ -53,6 +53,9 @@
         <%=link_to "Delete", recipe_recipe_food_path(@recipe, food), method: :delete%>
       </td>
     <% end %>
+    <% if cannot? :delete, food %>
+  <td>No actions available</td>
+<% end %>
     </tr>
     <%end%>
     </tbody>
